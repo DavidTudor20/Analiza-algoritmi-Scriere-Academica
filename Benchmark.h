@@ -25,10 +25,10 @@ inline double measureAverageTime(Func sortFunc, const vector<int>& baseData, int
 
 inline void runBenchmarks(int choice) {
     ofstream outFile("advanced_benchmark.csv");
-    // [!] MODIFICARE AICI: Am adaugat Quick (us) la finalul listei
+    
     outFile << "Distribution,Size,Runs,Bubble (us),Selection (us),Insertion (us),Merge (us),Quick (us)\n";
 
-    // [!] REZOLVAREA E AICI: Am sters ', 100000' de la final
+    
     vector<int> sizes = {10, 50, 100, 1000, 5000, 10000}; 
     
     vector<pair<string, vector<int>(*)(int)>> distributions = {
