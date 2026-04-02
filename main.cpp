@@ -14,8 +14,8 @@ int main() {
         cout << " 2. Test Selection Sort\n";
         cout << " 3. Test Insertion Sort\n";
         cout << " 4. Test Merge Sort\n";
-        cout << " 5. Test Quick Sort\n";      // [!] Am adaugat Quick Sort aici
-        cout << " 6. Test ALL Algorithms\n";  // [!] Am mutat Test ALL pe 6
+        cout << " 5. Test Quick Sort\n";
+        cout << " 6. Test ALL Algorithms\n";
         cout << " 0. Exit Program\n";
         cout << "---------------------------------------\n";
         cout << "Enter your choice: ";
@@ -39,12 +39,10 @@ int main() {
                 runBenchmarks(choice);
                 break;
             case 5:
-                // [!] Noul caz pentru Quick Sort
                 cout << "\nRunning Quick Sort benchmarks...\n";
                 runBenchmarks(choice);
                 break;
             case 6:
-                // [!] Cazul mutat pentru toate testele
                 cout << "\nRunning ALL algorithm benchmarks. This may take a moment...\n";
                 runBenchmarks(choice);
                 break;
@@ -52,7 +50,6 @@ int main() {
                 cout << "\nExiting benchmark tool. Goodbye!\n";
                 break;
             default:
-                // [!] Am actualizat mesajul de eroare la 0 - 6
                 cout << "\nInvalid choice. Please enter a number between 0 and 6.\n";
                 break;
         }
