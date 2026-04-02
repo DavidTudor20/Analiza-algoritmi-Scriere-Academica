@@ -70,7 +70,7 @@ inline void mergeSortHelper(vector<int>& arr, int left, int right) {
     int mid = left + (right - left) / 2;
     mergeSortHelper(arr, left, mid);
     mergeSortHelper(arr, mid + 1, right);
-    merge(arr, left, mid, right); // FIXED: Added the 'mid' variable here
+    merge(arr, left, mid, right);
 }
 
 inline void mergeSort(vector<int>& arr) {
