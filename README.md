@@ -29,3 +29,16 @@ Toate valorile sunt exprimate în **milisecunde (ms)**.
 | **Flat** | 514,31 | 253,69 | 181,93 | 1,90 | 47,39 |
 
 ![Analiza Performantei Algoritmilor](tabel.png)
+
+
+**Anomalia 1: Quick Sort pe date "Flat" (egale)**
+-
+
+Când toate elementele sunt egale, algoritmul tău Quick Sort nu mai reușește să împartă lista în două jumătăți egale. Deoarece toate numerele sunt egale cu Pivotul, el pune 0 elemente în stânga și restul de $n-1$ elemente în dreapta. Asta forțează algoritmul să facă pași minusculi, degradându-se teoretic într-o complexitate de $O(n^2)$.
+Cum se reproduce: Generează o listă de 10.000 de elemente de "1" și rulează codul cu Quick Sort.
+
+**Anomalia 2: Insertion Sort pe date "Flat"**
+-
+Motivul pentru care rezultatele practice nu coincid aici cu teoria ține strict de detaliile de implementare a codului, mai exact de operatorul logic folosit în bucla de căutare.
+
+În mod normal, algoritmul mută elementele spre dreapta doar cât timp numărul curent este strict mai mic decât cel verificat. Însă, dacă implementarea folosește operatorul mai mare sau egal (>=) în condiția buclei while în loc de strict mai mare (>), algoritmul este păcălit. El vede două numere identice (de exemplu, 5 și 5) și decide să le schimbe locul între ele.Astfel, deși șirul rămâne neschimbat vizual, programul efectuează $O(n^2)$ operații de mutare inutile în memorie pentru fiecare număr în parte. Această muncă în zadar se traduce în acele 181 de milisecunde înregistrate de cronometru.
