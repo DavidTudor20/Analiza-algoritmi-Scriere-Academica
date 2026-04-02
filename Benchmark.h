@@ -46,12 +46,12 @@ inline void runBenchmarks(int choice) {
             int runs = (size <= 100) ? 50000 : 10; 
             vector<int> data = dist.second(size);
 
-            // [!] MODIFICARE AICI: Am adaugat timeQuick = 0
+            
             double timeBubble = 0, timeSelect = 0, timeInsert = 0, timeMerge = 0, timeQuick = 0;
 
             cout << "Size " << setw(6) << size << " | Runs: " << setw(5) << runs << " | ";
 
-            // [!] MODIFICARE AICI: Am pus 'choice == 6' pentru rularea tuturor algoritmilor
+            
             if (choice == 1 || choice == 6) {
                 timeBubble = measureAverageTime(bubbleSort, data, runs);
                 cout << "Bubble: " << setw(8) << timeBubble << "us ";
@@ -68,7 +68,7 @@ inline void runBenchmarks(int choice) {
                 timeMerge = measureAverageTime(mergeSort, data, runs);
                 cout << "Merge: " << setw(8) << timeMerge << "us ";
             }
-            // [!] MODIFICARE AICI: Am adaugat blocul de executie pentru Quick Sort
+            
             if (choice == 5 || choice == 6) {
                 timeQuick = measureAverageTime(quickSort, data, runs);
                 cout << "Quick: " << setw(8) << timeQuick << "us ";
@@ -76,7 +76,7 @@ inline void runBenchmarks(int choice) {
             
             cout << "\n";
 
-            // [!] MODIFICARE AICI: Am adaugat variabila timeQuick ca sa o scrie in Excel
+            
             outFile << dist.first << "," << size << "," << runs << "," 
                     << timeBubble << "," << timeSelect << "," 
                     << timeInsert << "," << timeMerge << "," << timeQuick << "\n";
