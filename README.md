@@ -2,11 +2,11 @@ Acest proiect este o aplicație de performanță care compară 5 algoritmi clasi
 
 Algoritmi Implementați 
 -
-- Bubble Sort ($O(n^2)$)
-- Selection Sort ($O(n^2)$)
-- Insertion Sort ($O(n^2)$
-- Merge Sort ($O(n \log n)$)
-- Quick Sort ($O(n \log n)$)
+- Bubble Sort (O(n^2))
+- Selection Sort (O(n^2))
+- Insertion Sort (O(n^2))
+- Merge Sort (O(n \log n))
+- Quick Sort (O(n \log n))
 
 **Structura Proiectului**
 Codul este organizat modular pentru a fi ușor de întreținut:
